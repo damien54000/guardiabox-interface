@@ -27,7 +27,7 @@ def dechiffrement_bytes(data: bytes, password: str):
         hmac_hash_module=SHA256
     )
 
-    #chiffrement AES
+    #Initialisation AES
     cipher = AES.new(key,AES.MODE_CCM, nonce = nonce)
     dechiffrement = cipher.decrypt_and_verify(ciphertext, tag)
 

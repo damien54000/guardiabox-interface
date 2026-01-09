@@ -1,6 +1,7 @@
 from db.creation_compte import create_user
 from db.connexion_compte import login_user
 from colorama import Fore, Style, init
+import getpass
 
 init()
 
@@ -12,13 +13,13 @@ def login_menu():
 
     if choix == "1":
         username = input("Nom d'utilisateur : ")
-        password = input("Mot de passe : ")
+        password = getpass.getpass("Mot de passe : ")
         create_user(username, password)
         return None
 
     elif choix == "2":
         username = input("Nom d'utilisateur : ")
-        password = input("Mot de passe : ")
+        password = getpass.getpass("Mot de passe : ")
         return login_user(username, password)
 
     else:
